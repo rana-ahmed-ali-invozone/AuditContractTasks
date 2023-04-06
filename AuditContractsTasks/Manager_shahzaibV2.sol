@@ -4,7 +4,7 @@ pragma solidity ^0.5.17;
 /**
  * @dev Logic to handle deposits and withdrawl on Mainchain.
  */
-contract GatewayManager {
+contract Manager {
   using AddressUtils for address;
   using SafeMath for uint256;
   using ECVerify for bytes32;
