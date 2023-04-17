@@ -54,7 +54,7 @@ contract Gateway {
 
   modifier onlyNewWithdrawal(uint256 _withdrawalId) {
     WithdrawalEntry memory _entry = withdrawals[_withdrawalId];
-    require(_entry.owner == address(0) && _entry.tokenAddress == address(0));
+    require(_entry.owner != address(0) && _entry.tokenAddress != address(0));
     _;
   }
 
