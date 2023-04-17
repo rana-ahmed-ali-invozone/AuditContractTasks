@@ -4,7 +4,7 @@ pragma solidity ^0.5.17;
 /**
  * @dev Logic to handle deposits and withdrawl on Mainchain.
  */
-contract Manager {
+contract Gateway {
   using AddressUtils for address;
   using SafeMath for uint256;
   using ECVerify for bytes32;
@@ -54,7 +54,7 @@ contract Manager {
 
   modifier onlyNewWithdrawal(uint256 _withdrawalId) {
     WithdrawalEntry memory _entry = withdrawals[_withdrawalId];
-    require(_entry.owner == address(0) && _entry.tokenAddress == address(0));
+    require(_entry.owner != address(0) && _entry.tokenAddress != address(0));
     _;
   }
 
